@@ -1,3 +1,10 @@
+# This script is modified ! 
+It's been modified so you can view html pages through it.
+It changes urls of assets, links (relative and absolute).
+All assets, scripts etc are either replaced with absolute url to dest host or left untouched.
+Links are amended so navigation should remain in the proxy.
+
+
 # cloudflare-cors-anywhere
 Cloudflare CORS proxy in a worker.
 
