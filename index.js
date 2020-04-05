@@ -50,9 +50,13 @@ addEventListener('fetch', async event => {
         myHeaders.delete('Accept-Encoding');
         myHeaders.set('Accept-Encoding', 'deflate');
 
-        if (myHeaders.get('x-frame-options'))
+        /* if (myHeaders.get('x-frame-options'))
           myHeaders.delete('x-frame-options');
+        */
+        if (myHeaders.get('content-security-policy'))
+          myHeaders.delete('content-security-policy');
 
+        myHeaders.set('x-frame-options', 'none');
         return myHeaders;
       }
       var fetch_url = unescape(unescape(origin_url.search.substr(1)));
@@ -156,7 +160,7 @@ addEventListener('fetch', async event => {
           }
 
           return new Response(
-            'BUMMERs\n\n' +
+            'BUMMER\n\n' +
               (orig != null ? 'Origin: ' + orig + '\n' : '') +
               'Ip: ' +
               remIp +
